@@ -11,7 +11,7 @@ All 500 pairs were checked one by one against their source abstract
 
 The set was built for the thesis *Combating Clinical Hallucinations Across Languages: A
 Multilingual Benchmark of RAG Architectures for Open-Weight Medical LLMs in English and
-Bahasa Indonesia*. The benchmark code that runs it is [Remus](https://github.com/krisnaparahita/Remus).
+Bahasa Indonesia*.
 
 > **Not for clinical use.** This is a research benchmark. It is not a source of medical
 > advice and must not be used for patient care.
@@ -40,7 +40,7 @@ Bahasa Indonesia*. The benchmark code that runs it is [Remus](https://github.com
 └── data/
     ├── pubmed_enid_qa_500_pairs.csv   one row per pair, both languages side by side (easiest to read)
     ├── pubmed_enid_qa_500_pairs.jsonl same as the CSV, one JSON object per line
-    └── pubmed_enid_qa_500_items.csv   one row per item, in the format the Remus code reads
+    └── pubmed_enid_qa_500_items.csv   one row per item, the format used in the thesis experiments
 ```
 
 All files are UTF-8. The three data files hold the same 500 pairs in different layouts.
@@ -60,8 +60,7 @@ All files are UTF-8. The three data files hold the same 500 pairs in different l
 
 ### `pubmed_enid_qa_500_items.csv` (one row per item)
 
-This is the file used in the thesis experiments, unchanged
-(`benchmark_pubmed_v2_reviewed.csv` in Remus, sha256 `f189b598…f303`).
+This is the file used in the thesis experiments, unchanged (sha256 `f189b598…f303`).
 
 | Column | Meaning |
 |---|---|
@@ -122,16 +121,14 @@ merged = pairs.merge(corpus, on="vol1_row", how="left")
 1. **Source selection.** Abstracts were sampled from Vol.1, and each was given a
    target task type (diagnostic reasoning, triage / referral, or medication / dosage). This
    assignment sets which kind of question to write; it does not classify the abstract.
-   See `docs/pubmed-qa-generation-requirements.md` and `scripts/select_pubmed_qa_sources.py`
-   in [Remus](https://github.com/krisnaparahita/Remus).
 2. **Question writing.** A large language model (Claude Opus 4.8, 20 August 2026) wrote
    one question per abstract in English and Indonesian, with four options. The question
-   has to be answerable from the abstract alone. Every pair passed the structural checks in
-   Remus's `scripts/import_pubmed_qa.py`.
+   has to be answerable from the abstract alone. Every pair passed automatic structural
+   checks (four options, one marked answer, matching English and Indonesian items).
 3. **Option rewrite and balancing.** The wrong options were rewritten to be specific,
    plausible and about as long as the correct option, so that the longest option is no
    longer a hint. The position of the correct answer was then shuffled the same way in
-   both languages, giving 125 correct answers per letter (Remus `scripts/benchmark_v2_build.py`).
+   both languages, giving 125 correct answers per letter.
 4. **Review.** The corpus reviewer (Moh. Nafik, S.Kep, IndoHealth-NLP) checked every pair
    against its abstract on seven criteria, with an independent model auditor. Two answer
    keys were wrong and were corrected; the corrected pairs passed a re-audit. Full details
@@ -154,9 +151,6 @@ python scripts/build_pairs.py
 - **With retrieval (RAG).** Index the Vol.1 abstracts with `document_id = pubmed-enid-NNNNN`
   (`NNNNN` = `vol1_row`, five digits). `ground_truth_docs` then tells you whether the
   retriever found the right abstract (precision@k, recall@k, MRR, nDCG).
-- **With [Remus](https://github.com/krisnaparahita/Remus).** Point `evaluation.dataset_path` in a config (e.g.
-  `configs/experiment-v3.yaml`) at `data/pubmed_enid_qa_500_items.csv`, and build the
-  corpus with `scripts/prepare_pubmed_corpus.py`.
 
 ## Limits
 
