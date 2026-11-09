@@ -26,14 +26,14 @@ Bahasa Indonesia*.
 | Answer key | A 125 · B 125 · C 125 · D 125. The same letter is correct in both languages |
 | Source | One abstract per pair, from The PubMed Bilingual Medical Corpus (EN-ID): Volume 1 (IndoHealth-NLP) |
 | Review | 500 of 500 pairs checked against the abstract; 2 wrong keys corrected; 0 open issues |
-| Licence | Non-commercial, CC BY-NC 4.0 (see [LICENSE](LICENSE)) |
+| Licence | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see [Licence](#licence)) |
 
 ## Folder contents
 
 ```text
 ├── README.md                          this file
 ├── VALIDATION.md                      the reviewer's verification and validation report
-├── LICENSE                            licence for the questions and answer keys
+├── LICENSE                            full text of the CC BY-NC 4.0 licence
 ├── CITATION.cff                       citation metadata
 ├── SHA256SUMS                         checksums of the data files
 ├── scripts/build_pairs.py             rebuilds the pair files from the item file and checks the data
@@ -169,6 +169,19 @@ python scripts/build_pairs.py
   A question is only as accurate as the summary it was written from.
 - Every question has an answer in its abstract (`requires_refusal` is always `False`),
   so the set does not test when a model should decline to answer.
+
+## Licence
+
+The questions, answer options and answer keys are licensed under the
+[Creative Commons Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/),
+as agreed with the source corpus author (IndoHealth-NLP). The full text is in
+[LICENSE](LICENSE). You may share and adapt the data for non-commercial purposes if you
+give credit (see [Citation](#citation)) and say whether you made changes. Commercial use
+needs a separate written agreement with the authors.
+
+The licence covers this question set only. The source abstracts are not included and
+remain under the terms of *The PubMed Bilingual Medical Corpus (EN-ID): Volume 1*
+(IndoHealth-NLP).
 
 ## Citation
 
