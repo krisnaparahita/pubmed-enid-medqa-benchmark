@@ -5,6 +5,7 @@ type: dataset
 authors:
   - family-names: Diwakara
     given-names: Mohammad Krisna Parahita
+    orcid: "https://orcid.org/0009-0000-7629-2132"
   - family-names: Nafik
     given-names: Moh.
     affiliation: IndoHealth-NLP

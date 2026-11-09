@@ -208,7 +208,8 @@ If you use this benchmark, please cite it and credit the source corpus as
 ## Acknowledgements and contact
 
 - Source corpus and review: IndoHealth-NLP; reviewer Moh. Nafik, S.Kep.
-- Question set and benchmark code: Mohammad Krisna Parahita Diwakara.
+- Question set and benchmark code: Mohammad Krisna Parahita Diwakara
+  (ORCID [0009-0000-7629-2132](https://orcid.org/0009-0000-7629-2132)).
 
 Please report errors in a question or answer key through an issue in this repository,
 with the `pair_id`.
