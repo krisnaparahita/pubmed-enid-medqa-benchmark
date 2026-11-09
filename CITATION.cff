@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below and credit the source corpus: IndoHealth-NLP, The PubMed Bilingual Medical Corpus (EN-ID): Volume 1 (4,996 pairs)."
+title: "PubMed EN-ID Medical QA Benchmark (500 pairs)"
+type: dataset
+authors:
+  - family-names: Diwakara
+    given-names: Mohammad Krisna Parahita
+  - family-names: Nafik
+    given-names: Moh.
+    affiliation: IndoHealth-NLP
+repository-code: "https://github.com/krisnaparahita/pubmed-enid-medqa-benchmark"
+license: CC-BY-NC-4.0
+keywords:
+  - medical question answering
+  - Indonesian
+  - multilingual
+  - benchmark
+  - retrieval-augmented generation
+references:
+  - type: dataset
+    title: "The PubMed Bilingual Medical Corpus (EN-ID): Volume 1"
+    authors:
+      - name: IndoHealth-NLP
+    url: "https://huggingface.co/datasets/IndoHealth-NLP/PubMed-Bilingual-Medical-Sample-EN-ID"
+    doi: 10.57967/hf/9675

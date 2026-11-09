@@ -1,0 +1,14 @@
+PubMed EN-ID Medical QA Benchmark (500 pairs)
+
+The question-answer pairs in this folder are licensed under the
+Creative Commons Attribution-NonCommercial 4.0 International licence
+(CC BY-NC 4.0): https://creativecommons.org/licenses/by-nc/4.0/
+
+You may share and adapt the material for non-commercial purposes,
+provided you give appropriate credit (see "Citation" in README.md),
+link to the licence, and indicate if changes were made.
+
+This licence covers the questions, answer options and answer keys only.
+The source abstracts are not included. They belong to the PubMed
+Bilingual Medical Corpus EN-ID (IndoHealth-NLP) and remain under that
+corpus's own terms.
